@@ -78,7 +78,7 @@ public class ReqresTest {
                 .contentType(ContentType.JSON)
                 .when().get()
                 .then()
-                .extract().jsonPath().getString("billing_type.name");
+                .extract().jsonPath().getString("id");
 
         System.out.println(s);
 
