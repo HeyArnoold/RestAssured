@@ -72,18 +72,15 @@ public class ReqresTest {
 
     @Test
     public void checkByName() {
-        given()
+        String s = given()
                 .baseUri("https://api.hh.ru/")
                 .basePath("vacancies/55883714")
                 .contentType(ContentType.JSON)
                 .when().get()
-                .then().log().all()
-                .body("name", equalTo("Инженер слаботочных систем"));
+                .then()
+                .extract().jsonPath().getString("billing_type.name");
 
-    }
+        System.out.println(s);
 
-    @Test
-    public void firstTest() {
-        Assertions.assertTrue(3 > 2);
     }
 }
