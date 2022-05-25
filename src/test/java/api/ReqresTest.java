@@ -71,7 +71,7 @@ public class ReqresTest {
     }
 
     @Test
-    public void getPetById() {
+    public void checkByName() {
         given()
                 .baseUri("https://api.hh.ru/")
                 .basePath("vacancies/55883714")
@@ -80,5 +80,10 @@ public class ReqresTest {
                 .then().log().all()
                 .body("name", equalTo("Инженер слаботочных систем"));
 
+    }
+
+    @Test
+    public void firstTest() {
+        Assertions.assertTrue(3 > 2);
     }
 }
